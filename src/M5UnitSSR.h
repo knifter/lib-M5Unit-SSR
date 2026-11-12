@@ -12,7 +12,7 @@ class M5UnitSSR : public TwoWireDevice
         M5UnitSSR(uint8_t addr = M5UNITSSR_ADDRESS_DEFAULT) : TwoWireDevice(addr) {};
 
         bool begin(uint8_t addr = 0);
-        uint32_t max_clock() { return 100000; };
+        virtual uint32_t max_clock() const { return 100000; };
 
         void setRelay(bool on);
         bool getRelay();
